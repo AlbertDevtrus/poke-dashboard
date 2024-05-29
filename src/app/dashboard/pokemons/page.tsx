@@ -1,5 +1,10 @@
 import { PokemonGrid, PokemonResponse, SimplePokemon } from "@/pokemons";
 
+export const metadata = {
+  title: "Lista de pokemons",
+  description: "Lista de pokemons",
+};
+
 export default async function PokemonsPage() {
   const pokemons = await getPokemons(151);
 
@@ -24,8 +29,6 @@ async function getPokemons(limit = 20, offset = 0): Promise<SimplePokemon[]> {
       name: pokemon.name,
     };
   });
-
-  // throw new Error("Nuevo error en pokemons");
 
   return pokemons;
 }
